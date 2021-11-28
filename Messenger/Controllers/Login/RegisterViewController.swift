@@ -7,9 +7,12 @@
 
 import UIKit
 import FirebaseAuth
+import JGProgressHUD
 
 class RegisterViewController: UIViewController {
     
+    private let spinner = JGProgressHUD(style: .dark)
+
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.clipsToBounds = true
@@ -188,17 +191,22 @@ class RegisterViewController: UIViewController {
                   return
               }
         
-        // Firebase log in
+        spinner.show(in: view)
         
+        // Firebase log in
         DatabaseManager.shared.userExists(with: email, completion: { [weak self] exists in
             guard let strongSelf = self else {
                 return
             }
             
+            // DispatchQueue => スレッドを分けて別々の処理をさせるもの
+            DispatchQueue.main.async {
+                strongSelf.spinner.dismiss()
+            }
+            
             guard !exists else {
                 // user already exists
                 strongSelf.alertuserLoginError(message: "Looks like a user account for that email address already exists")
-
                 return
             }
             
@@ -208,7 +216,31 @@ class RegisterViewController: UIViewController {
                     return
                 }
                 
-                DatabaseManager.shared.insertUser(with: ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email))
+                let chatUser = ChatAppUser(firstName: firstName,
+                                           lastName: lastName,
+                                           emailAddress: email)
+                // successってどこから来てるの？ => jsのmap関数と一緒で、insertUserでcompletionを実行した時の引数をここで受け取っているが、なぜ。。
+                // ここのcompletionで定義しているのは関数（無名関数, クロージャ)
+                // ここで定義している関数を実行しているのがinsertUser内のcompletionっていうことか！
+                DatabaseManager.shared.insertUser(with: chatUser, completion: { success in
+                    if success {
+                        // upload image
+                        guard let image = strongSelf.imageView.image,
+                                let data = image.pngData() else {
+                            return
+                        }
+                        let filename = chatUser.profilePictureFIleName
+                        StorageManager.shared.uploadProfilePicture(with: data, fileName: filename, completion: { result in
+                            switch result {
+                            case .success(let downloadUrl):
+                                UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")
+                                print(downloadUrl)
+                            case .failure(let error):
+                                print("Storage manager error: \(error)")
+                            }
+                        })
+                    }
+                })
                 
                 strongSelf.navigationController?.dismiss(animated: true, completion: nil)
             })

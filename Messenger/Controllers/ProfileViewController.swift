@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController {
             return nil
         }
         
-        let safeEmail = DatabaseManager.sefeEmail(emailAddress: email)
+        let safeEmail = DatabaseManager.safeEmail(emailAddress: email)
         let filename = safeEmail + "_profile_picture.png"
         
         let path = "images/" + filename
@@ -120,7 +120,5 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         acitonSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         present(acitonSheet, animated: true)
-        
-        
     }
 }

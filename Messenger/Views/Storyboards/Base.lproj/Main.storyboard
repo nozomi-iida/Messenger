@@ -12,7 +12,6 @@
         <!--Chats-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ConversationsViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -22,6 +21,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Chats" id="Uvy-Sn-Dll"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138" y="963"/>
         </scene>
@@ -47,7 +47,7 @@
         <scene sceneID="12G-7J-J6p">
             <objects>
                 <navigationController id="mBq-iq-IIX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="c5i-cB-ay3"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.circle" catalog="system" id="c5i-cB-ay3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="rkg-Dd-egN">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -96,7 +96,7 @@
         <scene sceneID="BDq-d5-sZU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bMX-uH-ZAF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chats" id="D2W-b6-tay"/>
+                    <tabBarItem key="tabBarItem" title="Chats" image="message" catalog="system" id="D2W-b6-tay"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="vGe-Rx-UTK">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -113,6 +113,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="message" catalog="system" width="128" height="113"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

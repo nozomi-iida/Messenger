@@ -39,7 +39,7 @@ class LoginViewController: UIViewController {
         field.placeholder = "Email Address..."
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         field.leftViewMode = .always
-        field.backgroundColor = .white
+        field.backgroundColor = .secondarySystemBackground
         return field
     }()
     
@@ -54,7 +54,7 @@ class LoginViewController: UIViewController {
         field.placeholder = "Password..."
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         field.leftViewMode = .always
-        field.backgroundColor = .white
+        field.backgroundColor = .secondarySystemBackground
         field.isSecureTextEntry = true
         return field
     }()
@@ -84,7 +84,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginObserver = NotificationCenter.default.addObserver(forName: Notification.Name.didLoginNotification,
+        loginObserver = NotificationCenter.default.addObserver(forName: .didLoginNotification,
                                                                object: nil,
                                                                queue: .main,
                                                                using: { [weak self] _ in
@@ -98,7 +98,7 @@ class LoginViewController: UIViewController {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         
         title = "Log in"
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register",
                                                             style: .done,
@@ -276,6 +276,7 @@ extension LoginViewController: LoginButtonDelegate {
 
             
             DatabaseManager.shared.userExists(with: email, completion: { exists in
+
                 if !exists {
                     let chatUser = ChatAppUser(firstName: firstName,
                                                lastName: lastName,
@@ -287,7 +288,7 @@ extension LoginViewController: LoginButtonDelegate {
                                 return
                             }
                             
-                            print("Downloadin data from facebook image")
+                            print("Downloading data from facebook image")
                             
                             URLSession.shared.dataTask(with: url, completionHandler: { data, _, _ in
                                 guard let data = data else {

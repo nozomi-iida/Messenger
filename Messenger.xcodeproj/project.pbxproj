@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F209F30277C8F5200ACD8AC /* NewConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F209F2F277C8F5200ACD8AC /* NewConversationCell.swift */; };
+		7F209F32277D81C700ACD8AC /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F209F31277D81C500ACD8AC /* LocationPickerViewController.swift */; };
+		7F209F35277EFE5A00ACD8AC /* ConversationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F209F34277EFE5A00ACD8AC /* ConversationModels.swift */; };
+		7F209F37277EFEC300ACD8AC /* ChatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F209F36277EFEC300ACD8AC /* ChatModels.swift */; };
+		7F209F39277EFF3D00ACD8AC /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F209F38277EFF3D00ACD8AC /* SearchResult.swift */; };
+		7F209F3B277EFF8300ACD8AC /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F209F3A277EFF8300ACD8AC /* ProfileViewModel.swift */; };
 		7F2ACF7C274B137B00908854 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2ACF7B274B137B00908854 /* DatabaseManager.swift */; };
 		7F326A05276F3FBE004BE6E0 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F326A04276F3FBE004BE6E0 /* ConversationTableViewCell.swift */; };
 		7F73C7BB27512759008FBCD9 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F73C7BA27512759008FBCD9 /* ChatViewController.swift */; };
@@ -20,7 +26,6 @@
 		7F7C71CC27410C2C007EB6E0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7C71CB27410C2C007EB6E0 /* LoginViewController.swift */; };
 		7F7C71CE27410C3C007EB6E0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7C71CD27410C3C007EB6E0 /* RegisterViewController.swift */; };
 		7F7C71D027410C63007EB6E0 /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7C71CF27410C63007EB6E0 /* PhotoViewerViewController.swift */; };
-		7F7C71D227410C7A007EB6E0 /* VideoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7C71D127410C7A007EB6E0 /* VideoViewerViewController.swift */; };
 		7F7C71D427410C90007EB6E0 /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7C71D327410C90007EB6E0 /* NewConversationViewController.swift */; };
 		7F7C71D627410CA7007EB6E0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7C71D527410CA7007EB6E0 /* ProfileViewController.swift */; };
 		7F7C71D927411145007EB6E0 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7C71D827411145007EB6E0 /* Extentions.swift */; };
@@ -32,6 +37,12 @@
 		597DF68E77E5388F81D226C6 /* Pods-Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.debug.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.debug.xcconfig"; sourceTree = "<group>"; };
 		6A91E6D499BE0C612A5EFF98 /* Pods_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A98519315A0B1E5B5AC48CF /* Pods-Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.release.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.release.xcconfig"; sourceTree = "<group>"; };
+		7F209F2F277C8F5200ACD8AC /* NewConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationCell.swift; sourceTree = "<group>"; };
+		7F209F31277D81C500ACD8AC /* LocationPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
+		7F209F34277EFE5A00ACD8AC /* ConversationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationModels.swift; sourceTree = "<group>"; };
+		7F209F36277EFEC300ACD8AC /* ChatModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModels.swift; sourceTree = "<group>"; };
+		7F209F38277EFF3D00ACD8AC /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		7F209F3A277EFF8300ACD8AC /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		7F2ACF7B274B137B00908854 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		7F326A04276F3FBE004BE6E0 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
 		7F73C7BA27512759008FBCD9 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -47,7 +58,6 @@
 		7F7C71CB27410C2C007EB6E0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7F7C71CD27410C3C007EB6E0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7F7C71CF27410C63007EB6E0 /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
-		7F7C71D127410C7A007EB6E0 /* VideoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewerViewController.swift; sourceTree = "<group>"; };
 		7F7C71D327410C90007EB6E0 /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		7F7C71D527410CA7007EB6E0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7F7C71D827411145007EB6E0 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
@@ -113,10 +123,10 @@
 				7F7C71B527410956007EB6E0 /* ConversationsViewController.swift */,
 				7F7C71D727410D7F007EB6E0 /* Login */,
 				7F7C71CF27410C63007EB6E0 /* PhotoViewerViewController.swift */,
-				7F7C71D127410C7A007EB6E0 /* VideoViewerViewController.swift */,
 				7F7C71D327410C90007EB6E0 /* NewConversationViewController.swift */,
 				7F7C71D527410CA7007EB6E0 /* ProfileViewController.swift */,
 				7F73C7BA27512759008FBCD9 /* ChatViewController.swift */,
+				7F209F31277D81C500ACD8AC /* LocationPickerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -124,6 +134,10 @@
 		7F7C71C627410A9B007EB6E0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7F209F34277EFE5A00ACD8AC /* ConversationModels.swift */,
+				7F209F36277EFEC300ACD8AC /* ChatModels.swift */,
+				7F209F38277EFF3D00ACD8AC /* SearchResult.swift */,
+				7F209F3A277EFF8300ACD8AC /* ProfileViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -146,6 +160,7 @@
 				7F7C71CA27410B0D007EB6E0 /* Storyboards */,
 				7F7C71BA2741095D007EB6E0 /* Assets.xcassets */,
 				7F326A04276F3FBE004BE6E0 /* ConversationTableViewCell.swift */,
+				7F209F2F277C8F5200ACD8AC /* NewConversationCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +211,7 @@
 				7F7C71AC27410956007EB6E0 /* Resources */,
 				066BF30136E05907931AF946 /* [CP] Embed Pods Frameworks */,
 				C2F2D7BB0BEE50F372B3F9DB /* [CP] Copy Pods Resources */,
+				7F209F33277EE28400ACD8AC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -293,6 +309,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7F209F33277EE28400ACD8AC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
 		C2F2D7BB0BEE50F372B3F9DB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,19 +351,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F7C71CC27410C2C007EB6E0 /* LoginViewController.swift in Sources */,
+				7F209F3B277EFF8300ACD8AC /* ProfileViewModel.swift in Sources */,
+				7F209F30277C8F5200ACD8AC /* NewConversationCell.swift in Sources */,
 				7F2ACF7C274B137B00908854 /* DatabaseManager.swift in Sources */,
-				7F7C71D227410C7A007EB6E0 /* VideoViewerViewController.swift in Sources */,
+				7F209F37277EFEC300ACD8AC /* ChatModels.swift in Sources */,
 				7F7C71D927411145007EB6E0 /* Extentions.swift in Sources */,
 				7F7C71D427410C90007EB6E0 /* NewConversationViewController.swift in Sources */,
 				7F7C71CE27410C3C007EB6E0 /* RegisterViewController.swift in Sources */,
 				7F7C71B627410956007EB6E0 /* ConversationsViewController.swift in Sources */,
+				7F209F39277EFF3D00ACD8AC /* SearchResult.swift in Sources */,
 				7F7C71B227410956007EB6E0 /* AppDelegate.swift in Sources */,
 				7F7C71D627410CA7007EB6E0 /* ProfileViewController.swift in Sources */,
 				7F7C71B427410956007EB6E0 /* SceneDelegate.swift in Sources */,
 				7F326A05276F3FBE004BE6E0 /* ConversationTableViewCell.swift in Sources */,
 				7F73C7BB27512759008FBCD9 /* ChatViewController.swift in Sources */,
+				7F209F35277EFE5A00ACD8AC /* ConversationModels.swift in Sources */,
 				7F7C71D027410C63007EB6E0 /* PhotoViewerViewController.swift in Sources */,
 				7F73C7BD27531D62008FBCD9 /* StorageManager.swift in Sources */,
+				7F209F32277D81C700ACD8AC /* LocationPickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +522,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Messenger/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please allow access to send audio and video message";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to select a photot for your profile";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -517,6 +556,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Messenger/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please allow access to send audio and video message";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to select a photot for your profile";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

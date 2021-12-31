@@ -8,15 +8,15 @@
 import UIKit
 import JGProgressHUD
 
-class NewConversationViewController: UIViewController {
+final class NewConversationViewController: UIViewController {
     
-    public var completion: (([String: String]) -> (Void))?
+    public var completion: ((SearchResult) -> (Void))?
     
     private let spinner = JGProgressHUD(style: .dark)
     
     private var users = [[String: String]]()
     
-    private var results = [[String: String]]()
+    private var results = [SearchResult]()
     
     private var hasFetched = false
     
@@ -29,8 +29,8 @@ class NewConversationViewController: UIViewController {
     private let tableView: UITableView = {
         let table = UITableView()
         table.isHidden = true
-        table.register(UITableViewCell.self,
-                       forCellReuseIdentifier: "cell")
+        table.register(NewConversationCell.self,
+                       forCellReuseIdentifier: NewConversationCell.identifier)
         return table
     }()
     
@@ -52,7 +52,7 @@ class NewConversationViewController: UIViewController {
         tableView.dataSource = self
         
         searchBar.delegate = self
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         navigationController?.navigationBar.topItem?.titleView = searchBar
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel",
                                                             style: .done,
@@ -80,8 +80,9 @@ extension NewConversationViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = results[indexPath.row]["name"]
+        let model = results[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: NewConversationCell.identifier, for: indexPath) as! NewConversationCell
+        cell.configure(with: model)
         return cell
     }
     
@@ -93,6 +94,10 @@ extension NewConversationViewController: UITableViewDelegate, UITableViewDataSou
         dismiss(animated: true, completion: { [weak self ] in
             self?.completion?(targetUserData)
         })
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
     }
 }
 
@@ -107,7 +112,7 @@ extension NewConversationViewController: UISearchBarDelegate {
         results.removeAll()
         spinner.show(in: view)
         
-        self.searchUser(query: text)
+        searchUser(query: text)
     }
     
     func searchUser(query: String) {
@@ -134,35 +139,50 @@ extension NewConversationViewController: UISearchBarDelegate {
     
     func filterUsers(with term: String) {
         // update the UI: eigher show results or show no results label
-        guard hasFetched else {
+        guard let currentUseremail = UserDefaults.standard.value(forKey: "email") as? String,
+              hasFetched else {
             return
         }
         
+        let safeEmail = DatabaseManager.safeEmail(emailAddress: currentUseremail)
+        
         self.spinner.dismiss()
         
-        let results: [[String: String]] = self.users.filter({
+        let results: [SearchResult] = users.filter({
+            guard let email = $0["email"],
+                  email != safeEmail else {
+                      return false
+            }
+            
             guard let name = $0["name"]?.lowercased() else {
                 return false
             }
             
             return name.hasPrefix(term.lowercased())
+        }).compactMap({
+            guard let email = $0["email"],
+                  let name = $0["name"] else {
+                      return nil
+            }
+            
+            return SearchResult(name: name, email: email)
         })
         
         self.results = results
+        
         updateUI()
     }
     
     func updateUI() {
         if results.isEmpty {
-            self.noResultsLabel.isHidden = false
-            self.tableView.isHidden = true
+            noResultsLabel.isHidden = false
+            tableView.isHidden = true
         }
         else {
-            self.noResultsLabel.isHidden = true
-            self.tableView.isHidden = false
-            self.tableView.reloadData()
+            noResultsLabel.isHidden = true
+            tableView.isHidden = false
+            tableView.reloadData()
 
         }
     }
-    
 }
